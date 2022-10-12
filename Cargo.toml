@@ -2,6 +2,18 @@
 name = "accounting"
 version = "0.2.0"
 edition = "2021"
+authors = ["Antoine Abhay <antoineabhay@gmail.com>"]
+license = "Apache-2.0"
+description = "A tool to do basic accounting"
+readme = "README.md"
+homepage = "https://github.com/AntoineAbhay/Accounting"
+repository = "https://github.com/AntoineAbhay/Accounting"
+keywords = ["cli", "accounting"]
+categories = ["command-line-utilities"]
+exclude = [
+    "data/*",
+]
+
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
