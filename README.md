@@ -15,12 +15,14 @@ cargo build --release
 
 
 ### Execute
-You can find an example of csv file in this repo: example.csv
+You can find an example of csv file in this repo: data/invoices_example.csv
 ```
-./target/release/accouting -f accounting.csv -s 2022-01-01 -e 2022-12-31 -c 0.2
+./target/release/accounting compute -f data/invoices_example.csv -s 2022-01-01 -e 2022-12-31 -c 0.2
+
+./target/release/accounting add -f ./data/invoices_example.csv -s 2022-11-01 -e 2022-11-30 -t 999 -v 20 --payment-received-on 2022-12-10
 ```
 
 For more help
 ```
-./target/release/accouting -h
+./target/release/accounting -h
 ```

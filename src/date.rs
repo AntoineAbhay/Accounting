@@ -1,16 +1,16 @@
 use chrono::format::ParseError;
 use chrono::NaiveDate;
-use serde::{self, Deserialize, Deserializer};
+use serde::{self, Deserialize, Deserializer, Serializer};
 
 pub const FORMAT: &'static str = "%Y-%m-%d";
 
-// pub fn serialize<S>(date: &NaiveDate, serializer: S) -> Result<S::Ok, S::Error>
-// where
-//     S: Serializer,
-// {
-//     let s = format!("{}", date.format(FORMAT));
-//     serializer.serialize_str(&s)
-// }
+pub fn serialize<S>(date: &NaiveDate, serializer: S) -> Result<S::Ok, S::Error>
+where
+    S: Serializer,
+{
+    let s = format!("{}", date.format(FORMAT));
+    serializer.serialize_str(&s)
+}
 
 fn parse_date(s: &String) -> Result<NaiveDate, ParseError> {
   NaiveDate::parse_from_str(&s, FORMAT)
